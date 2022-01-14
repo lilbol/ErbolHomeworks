@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<div>
+    <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>
+    <p>{{ books.genre }}</p>
+    <p>{{ books.description }}</p>
+    <img src="{{ books.image.url }}" alt="">
+</div>
+</body>
+</html>
