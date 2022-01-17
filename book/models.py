@@ -11,5 +11,5 @@ class Book(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='')
     genre = models.CharField(choices=GENRE_CHOICE, max_length=100)
-    created_day = models.DateTimeField(auto_now_add=True)
-    updated_day = models.DateTimeField(auto_now=True)
+    created_day = models.DateField(auto_now_add=True)
+

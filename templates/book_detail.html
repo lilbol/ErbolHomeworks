@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Books</title>
+    <title>One blog</title>
+    <style type="text/css">
+        body{
+            align-content: center;
+            list-style-type: none;
+            background-color: #e5c7ca;
+        }
+    </style>
 </head>
 <body>
-<div>
-    <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>
-    <p>{{ books.genre }}</p>
-    <p>{{ books.description }}</p>
-    <img src="{{ books.image.url }}" alt="">
-</div>
+    <div>
+        <h3>Title:</h3>
+        <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>
+        <h3>Image:</h3>
+        <p><img style="width: 200px; height: 300px" src="{{ books.image.url }}" alt=""></p>
+        <h3>Description</h3>
+        <p>{{ books.description }}</p>
+    </div>
 </body>
 </html>
+{#    <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>#}
+{#    <p>{{ books.genre }}</p>#}
+{#    <p>{{ books.description }}</p>#}
+{#    <img src="{{ books.image.url }}" alt="">#}
