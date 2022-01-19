@@ -21,3 +21,19 @@ def add_book(request):
     else:
         form = forms.BookForm()
     return render(request, 'add_books.html', {'form': form})
+
+def book_update(request, id):
+    book_object = get_object_or_404(models.Book, id=id)
+    if request.method == 'POST':
+        form = forms.BookForm(instance=book_object, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Book Successfully Updated')
+    else:
+        form = forms.BookForm(instance=book_object)
+    return render(request, 'book_update.html', {'form': form, 'object': book_object})
+
+def book_delete(request, id):
+    book_object = get_object_or_404(models.Book, id=id)
+    book_object.delete()
+    return HttpResponse("Book Deleted")

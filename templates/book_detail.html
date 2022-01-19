@@ -9,9 +9,25 @@
             list-style-type: none;
             background-color: #e5c7ca;
         }
+        .btn-primary {
+        background-color: #d63384;
+        }
+
+        .button__container {
+            max-width: 900px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+
+
     </style>
 </head>
 <body>
+    <div class="container button__container">
+        <a href="/books/" class="btn btn-primary">CATALOG</a>
+
+    </div>
     <div>
         <h3>Title:</h3>
         <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>
@@ -20,6 +36,9 @@
         <h3>Description</h3>
         <p>{{ books.description }}</p>
     </div>
+
+<button><a href="/books/{{ books.id }}/update" class=" btn btn-primary">Update</a></button>
+<button><a href="/books/{{ books.id }}/delete" class=" btn btn-primary">Delete</a> </button>
 </body>
 </html>
 {#    <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>#}
