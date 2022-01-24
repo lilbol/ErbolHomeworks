@@ -24,21 +24,42 @@
     </style>
 </head>
 <body>
+<div>
     <div class="container button__container">
-        <a href="/books/" class="btn btn-primary">CATALOG</a>
-
+    <a href="/books/" class="btn btn-primary">CATALOG</a>
     </div>
-    <div>
-        <h3>Title:</h3>
-        <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>
-        <h3>Image:</h3>
-        <p><img style="width: 200px; height: 300px" src="{{ books.image.url }}" alt=""></p>
-        <h3>Description</h3>
-        <p>{{ books.description }}</p>
-    </div>
+     <h3>Title:</h3>
+    <h2><a href="/book/{{ object.id }}/">{{ object.title }}</a></h2>
+    <h3>Image:</h3>
+    <p><img style="width: 200px; height: 300px" src="{{ object.image.url }}" alt=""></p>
+    <h3>Description:</h3>
+    <p>{{ object.description }}</p>
+    <h3>Genre:</h3>
+    <p>{{ object.genre }}</p>
+</div>
+<button><a href="/books/{{ object.id }}/update" class=" btn btn-primary">Update</a></button>
+<button><a href="/books/{{ object.id }}/delete" class=" btn btn-primary">Delete</a> </button>
+<div>
+    <h2>Comments:</h2>
+    <ul>
+        {% for i in object.book_comment.all %}
+            <li>
+                {{ i.text }}
+            </li>
+            <p>{{ i.created_date }}</p>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h2>Expert</h2>
+    <h3>Full name of Author:</h3>
+    <h2><a href="/book/{{ object.id }}/">{{ object.full_name }}</a></h2>
+    <h3>Personal Info:</h3>
+    <p>{{ object.personal_info }}</p>
+    <h3>Genre:</h3>
+    <p>{{ object.activity }}</p>
 
-<button><a href="/books/{{ books.id }}/update" class=" btn btn-primary">Update</a></button>
-<button><a href="/books/{{ books.id }}/delete" class=" btn btn-primary">Delete</a> </button>
+</div>
 </body>
 </html>
 {#    <h2><a href="/book/{{ books.id }}/">{{ books.title }}</a></h2>#}
