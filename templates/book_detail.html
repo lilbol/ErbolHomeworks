@@ -52,13 +52,15 @@
 </div>
 <div>
     <h2>Expert</h2>
-    <h3>Full name of Author:</h3>
-    <h2><a href="/book/{{ object.id }}/">{{ object.full_name }}</a></h2>
-    <h3>Personal Info:</h3>
-    <p>{{ object.personal_info }}</p>
-    <h3>Genre:</h3>
-    <p>{{ object.activity }}</p>
-
+    <ul>
+        {% for i in object.book_expert.all %}
+            <li>
+                {{ i.full_name_of_Expert }}
+                {{ i.personal_info }}
+                {{ i.activity  }}
+            </li>
+        {% endfor %}
+    </ul>
 </div>
 </body>
 </html>

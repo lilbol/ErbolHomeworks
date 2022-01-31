@@ -39,7 +39,7 @@ class BookExpert(models.Model):
     )
     books = models.ForeignKey(Book, on_delete=models.CASCADE,
                               related_name="book_expert")
-    full_name_of_Author = models.CharField(max_length=100)
+    full_name_of_Expert = models.CharField(max_length=100)
     activity = models.CharField(choices=ACTIVITY_CHOICE, max_length=100)
     personal_info = models.TextField()
 

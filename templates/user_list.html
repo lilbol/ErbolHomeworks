@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<style>
+    body {
+        background: rgb(34, 193, 195);
+        background: linear-gradient(0deg, rgba(31, 191, 195, 1) 0%, rgba(69, 119, 81, 0.9587185215883228) 100%);
+    }
+</style>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Users:
+  </div>
+    <ul>
+        {% for i in object_list %}
+           <li class="list-group-item">user</li>
+           <h2>{{ i.username }}</h2> <h2>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

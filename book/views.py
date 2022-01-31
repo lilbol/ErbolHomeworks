@@ -83,4 +83,3 @@ class BooksDeleteView(generic.DeleteView):
 #     book_object = get_object_or_404(models.Book, id=id)
 #     book_object.delete()
 #     return HttpResponse("Book Deleted")
-
